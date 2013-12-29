@@ -1,15 +1,21 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="rabbitApp">
 <head>
   <meta charset="utf-8">
-  <title>My HTML File</title>
+  <title>Angora Rabbits</title>
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+	<script src="app/controllers.js"></script>
 </head>
-<body>
+<body ng-controller="RabbitListCtrl">
  
-  <p>Nothing here {{'yet' + '!'}}</p>
+	<ul>
+    <li ng-repeat="rabbit in rabbits">
+      {{rabbit.name}}
+      <p>{{rabbit.desc}}</p>
+    </li>
+  </ul>
  
 </body>
 </html>
