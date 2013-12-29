@@ -5,5 +5,7 @@
 !makefile
 !README.md
 !.gitignore
+!.heroku
+!Procfile
 !*.go
 !*.html
