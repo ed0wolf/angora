@@ -14,6 +14,9 @@ rabbitApp.config(['$routeProvider',
         templateUrl: 'partials/rabbit-detail.html',
         controller: 'RabbitDetailCtrl'
       }).*/
+      when('/about', {
+        templateUrl: 'partials/about.html'
+      }).
       otherwise({
         redirectTo: '/rabbits'
       });

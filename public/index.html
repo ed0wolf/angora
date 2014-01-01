@@ -10,9 +10,22 @@
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
 </head>
-<body>
+<body ng-controller="MainCtrl">
   
-	<div ng-view></div>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+      <a class="navbar-brand" href="/">Rabbit</a>
+		</div>
+	
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+        <li ng-class="{ active: activePath.indexOf('/rabbits')==0 }"><a href="#">Home</a></li>
+        <li ng-class="{ active: activePath.indexOf('/about')==0 }"><a href="#/about">About</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<div class="partial-container" ng-view></div>
 	
 </body>
 </html>
