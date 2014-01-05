@@ -10,7 +10,7 @@ rabbitControllers.controller("MainCtrl", ['$scope', '$location', '$route',
   }])
 .controller('RabbitListCtrl', ['$scope', '$http',
   function ($scope, $http) {
-    $http.get('rabbits.json').success(function(data) {
+    $http.get('rabbits').success(function(data) {
       $scope.rabbits = data;
     });
   }])
