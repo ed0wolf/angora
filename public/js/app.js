@@ -10,7 +10,7 @@ rabbitApp.config(['$routeProvider',
         templateUrl: 'partials/rabbit-list.html',
         controller: 'RabbitListCtrl'
       }).
-      when('/rabbits/:rabbitId', {
+      when('/rabbits/:rabbitName', {
         templateUrl: 'partials/rabbit-detail.html',
         controller: 'RabbitDetailCtrl'
       }).

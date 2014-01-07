@@ -14,7 +14,9 @@ rabbitControllers.controller("MainCtrl", ['$scope', '$location', '$route',
       $scope.rabbits = data;
     });
   }])
-.controller('RabbitDetailCtrl', ['$scope', '$routeParams',
-  function ($scope, $routeParams) {
-    console.log($routeParams.rabbitId)
+.controller('RabbitDetailCtrl', ['$scope', '$http', '$routeParams',
+  function ($scope, $http, $routeParams) {
+    $http.get('rabbits/' + $routeParams.rabbitName).success(function(data) {
+      $scope.rabbit = data;
+    });
   }]);

@@ -18,5 +18,12 @@ func main() {
     }
     return b
   })
+  m.Get("/rabbits/:name", func(params martini.Params) []byte {
+    b, err := json.Marshal(repo.Get(params["name"]))
+    if err != nil {
+      panic(err)
+    }
+    return b
+  })
   m.Run()
 }

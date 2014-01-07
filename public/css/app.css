@@ -7,3 +7,8 @@ ul.collection
 {
     list-style-type: none;
 }
+
+img.pull-right
+{
+  float: right;
+}
