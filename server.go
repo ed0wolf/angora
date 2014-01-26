@@ -18,12 +18,16 @@ func main() {
     }
     return b
   })
-  m.Get("/rabbits/:name", func(params martini.Params) []byte {
-    b, err := json.Marshal(repo.Get(params["name"]))
+  m.Get("/rabbits/:name", func(params martini.Params) (int, []byte) {
+    rabbit, ok := repo.Get(params["name"])
+    if !ok {
+      return 404, []byte("Could not find requested rabbit")
+    }
+    b, err := json.Marshal(rabbit)
     if err != nil {
       panic(err)
     }
-    return b
+    return 200, b
   })
   m.Run()
 }

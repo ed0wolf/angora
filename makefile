@@ -1,10 +1,13 @@
-all: server
+all: build
 
-server: dependencies
+run: build
+	go run ./server.go
+
+build: getDependencies
 	go build
 	
-dependencies:
+getDependencies:
 	go get ./...
 	
 clean:
-	rm server
+	rm angora
